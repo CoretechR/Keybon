@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="keybon.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="portName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Layout1" Type="keybon.ScreenLayout" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Layout2" Type="keybon.ScreenLayout" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Layout3" Type="keybon.ScreenLayout" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Layout4" Type="keybon.ScreenLayout" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Layout5" Type="keybon.ScreenLayout" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Layout6" Type="keybon.ScreenLayout" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Layout7" Type="keybon.ScreenLayout" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>
