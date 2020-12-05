@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
@@ -36,7 +33,6 @@ namespace keybon
             get { return currentLayout; }
             set //respond to change of currentLayout
             {
-                Console.WriteLine(value);
                 if (!value.Equals(currentLayout))
                 {
                     currentLayout = value;
@@ -81,7 +77,7 @@ namespace keybon
             get { return currentApp; }
             set //respond to change of currentApp
             {
-                if (!value.Equals(currentApp) && !value.Equals("keybon"))
+                if (!value.Equals(currentApp) && !value.Equals("keybon companion"))
                 {
                     currentApp = value;
                     int nextLayout = 0;
@@ -141,7 +137,6 @@ namespace keybon
                 try
                 {
                     _serialPort.Open();
-                    Layouts[currentLayout].drawAll(_serialPort);
                 }
                 catch { }
             }  
@@ -458,24 +453,34 @@ namespace keybon
         }
         public void drawAll(SerialPort _serialPort)
         {
-            for(int i = 0; i < oleds.Length; i++)
-                writeImageToSerial(_serialPort, i+1, oleds[i]);
+            for (int i = 0; i < oleds.Length; i++)
+                writeImageToSerial(_serialPort, i + 1, oleds[i]);
         }
 
         private void writeImageToSerial(SerialPort _serialPort, int keyNum, Bitmap bmp)
         {
+            //Straight from https://docs.microsoft.com/de-de/dotnet/api/system.drawing.imaging.bitmapdata?redirectedfrom=MSDN&view=dotnet-plat-ext-5.0
+            // Lock the bitmap's bits.  
+            Rectangle rect = new Rectangle(0, 0, bmp.Width, bmp.Height);
+            System.Drawing.Imaging.BitmapData bmpData = bmp.LockBits(rect, System.Drawing.Imaging.ImageLockMode.ReadWrite, bmp.PixelFormat);
+
+            // Get the address of the first line.
+            IntPtr ptr = bmpData.Scan0;
+
+            // Declare an array to hold the bytes of the bitmap.
+            int bytesb = Math.Abs(bmpData.Stride) * bmp.Height;
+            byte[] rgbValues = new byte[bytesb];
+            System.Runtime.InteropServices.Marshal.Copy(ptr, rgbValues, 0, bytesb);
+
+            // Unlock the bits.
+            bmp.UnlockBits(bmpData);
 
             BitArray bits = new BitArray(bmp.Width * bmp.Height);
-
-            for (int y = 0; y < bmp.Height; y++)
+            for (int i = 0; i < rgbValues.Length; i+=4)
             {
-                for (int x = 0; x < bmp.Width; x++)
-                {
-                    Color pixel = bmp.GetPixel(x, y);
-                    double brightness = (pixel.R + pixel.G + pixel.B) / 3;
-                    bits[y * bmp.Width + x] = (brightness >= 128);
-                }
-            }
+                double brightness = (rgbValues[i] + rgbValues[i+1] + rgbValues[i+2]) / 3;
+                bits[i/4] = (brightness >= 128);
+            }            
 
             var bytes = new byte[(bits.Length - 1) / 8 + 1];
             bits.CopyTo(bytes, 0);
@@ -485,17 +490,19 @@ namespace keybon
                 bytes[i] = Reverse(bytes[i]);
             }
 
-            byte commandbyte = (byte)(47 + keyNum); //stating with ASCII 0
+            byte commandbyte = (byte)(47 + keyNum); //starting with ASCII 0
             try
             {                
                 byte[] command = { commandbyte };
                 _serialPort.Write(command, 0, command.Length);
                 _serialPort.Write(bytes, 0, bytes.Length);
             }
-            catch (Exception) { }
+            catch (Exception) {
+                Console.WriteLine("tx problem");
+            }
         }
 
-        // Reverses bits in a byte
+        // Reverses bits in a byte (https://softwarejuancarlos.com/2013/05/05/byte_bits_reverse/)
         public static byte Reverse(byte inByte)
         {
             byte result = 0x00;
