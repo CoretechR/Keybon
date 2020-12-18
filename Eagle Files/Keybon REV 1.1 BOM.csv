@@ -1,0 +1,19 @@
+Qty;Value;Device;Package;Parts;LCSC Link
+1;;USB_C16PIN;USB-C-16P;J2;https://lcsc.com/product-detail/USB-Connectors_SOFNG-MC-311D_C136423.html
+32;1.0uF;;0603;C1, C2, C3, C8, C10, C11, C14, C15, C18, C19, C20, C23, C24, C25, C28, C29, C30, C33, C34, C35, C38, C39, C40, C43, C44, C45, C48, C49, C50, C53, C54, C55;https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL10A105MB8NNNC_C307457.html
+3;10k;;0603;R8, R12, R15;https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_10KR-103-5_C144116.html
+2;18pF;;0603;C6, C7;https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Walsin-Tech-Corp-0603N180J500CT_C123538.html
+3;1k;;0603;R16, R17, R18;https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_FH-Guangdong-Fenghua-Advanced-Tech-RS-03K1001FT_C115325.html
+1;1k5;;0603;R20;https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_1-5KR-152-5_C138275.html
+10;2.2uF;;0603;C4, C9, C17, C22, C27, C32, C37, C42, C47, C52;https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_YAGEO-CC0603MRY5V7BB225_C519506.html
+2;27;;0603;R13, R14;https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_TA-I-Tech-RMS06JT270_C209231.html
+9;390k;;0603;R1, R2, R4, R5, R6, R7, R9, R10, R11;https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-RC0603JR-07390KL_C137633.html
+9;4.7uF;;0603;C5, C16, C21, C26, C31, C36, C41, C46, C51;https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_YAGEO-CC0805KKX7R6BB475_C520074.html
+2;47pF;;0603;C12, C13;https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_YAGEO-CC0603JRNPO8BN470_C519392.html
+2;5.1k;;0603;R3, R19;https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_RALEC-RTT035101FTP_C103686.html
+1;500mA;PTCSMD;PTC-1206;F1;https://lcsc.com/product-detail/PTC-Resettable-Fuses_Fuzetec-Tech-FSMD025-24-1206-R_C220146.html
+1;8MHz;CRYSTAL5X3;CRYSTAL-SMD-5X3;OSC;https://lcsc.com/product-detail/SMD-Crystal-Resonators_Abracon-LLC-ABM3B-8-000MHZ-10-1-U-T_C276420.html
+1;AP2112K-3.3V;V_REG_LDOSMD;SOT23-5;U3;https://lcsc.com/product-detail/Dropout-Regulators-LDO_Diodes-Incorporated_AP2112K-3-3TRG1_Diodes-Incorporated-AP2112K-3-3TRG1_C51118.html
+10;EVQQ;B3FS-1000P;EVQ-Q2_SMALLER;SW1, SW2, SW3, SW4, SW5, SW6, SW7, SW8, SW9, SW10;https://lcsc.com/product-detail/Tactile-Switches_Omron-Electronics-B3FS-1000P_C271750.html
+9;OLED0.66;OLED0.66;OLED-0.66-64X48;OLED1, OLED2, OLED3, OLED4, OLED5, OLED6, OLED7, OLED8, OLED9;https://lcsc.com/product-detail/OLED-Displays-Modules_UG-Univision-Semicon-UG-6448KLBEG03_C88334.html
+1;STM32F103C8T6;STM32F103C8T6;LQFP48;UC1;https://lcsc.com/product-detail/ST-Microelectronics_STMicroelectronics-STM32F103C8T6_C8734.html
