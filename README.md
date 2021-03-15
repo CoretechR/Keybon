@@ -10,7 +10,7 @@ Keybon is a macro keyboard with configurable layouts and functions. Integrated i
 
 1.  Download the USB bootloader: https://github.com/rogerclarkmelbourne/STM32duino-bootloader
 
-    Connect a USB-to-Serial adapter to the TX/RX pins of your board. Close the BOOT1 jumper before appying power.
+    Connect a USB-to-Serial adapter to the TX/RX pins of your board. Close the BOOT0 jumper before applying power.
     
     Flash the USB bootloader to the STM32 via the STM32 flasher:  https://www.st.com/en/development-tools/flasher-stm32.html
 2.  Install the required Arduino libraries listed in the keybon.ino file
