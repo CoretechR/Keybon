@@ -17,7 +17,7 @@ Keybon is a macro keyboard with configurable layouts and functions. Integrated i
 
     Important: Adafruit_GFX_Library version 1.7.5 must be installed (dependencies for newer versions are incompatible with the STM32)
     
-    Add these lines to the Adafruit_SSD1306 (in Arduino/libraries/...)
+    Add the following lines to the Adafruit_SSD1306 library (in Arduino\libraries\Adafruit_SSD1306\Adafruit_SSD1306.cpp) 
     ![](https://user-images.githubusercontent.com/13223470/107243109-f9623400-6a2c-11eb-850f-8f4064462722.png)
     ```C++
     else if ((WIDTH == 128) && (HEIGHT == 48)) {
